@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>State Ranker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>State Ranker</h1>
+      <p class="sub">Pick between two states, one matchup at a time, to build a full ranking.</p>
+    </header>
+
+    <!-- Setup -->
+    <section id="setup" class="card" hidden>
+      <label for="question">What are you ranking by?</label>
+      <input id="question" type="text" value="Which state is better?" maxlength="80" />
+      <label class="check">
+        <input id="includeDC" type="checkbox" /> Include Washington, D.C.
+      </label>
+      <label class="check">
+        <input id="shuffle" type="checkbox" checked /> Shuffle the order states are introduced
+      </label>
+      <button id="startBtn" class="primary">Start ranking</button>
+      <p class="hint">About 230 matchups for all 50 states. Your progress saves automatically in this browser.</p>
+    </section>
+
+    <!-- Matchup -->
+    <section id="battle" hidden>
+      <h2 id="prompt"></h2>
+      <div class="matchup">
+        <button id="left" class="choice"></button>
+        <span class="vs">vs</span>
+        <button id="right" class="choice"></button>
+      </div>
+      <div class="progress"><div id="bar"></div></div>
+      <p id="progressText" class="hint"></p>
+      <div class="actions">
+        <button id="undoBtn">Undo</button>
+        <button id="resetBtn">Start over</button>
+      </div>
+      <p class="hint">Keyboard: ← / → to choose, U or Backspace to undo.</p>
+
+      <details id="partial">
+        <summary>Ranking so far</summary>
+        <ol id="partialList"></ol>
+      </details>
+    </section>
+
+    <!-- Results -->
+    <section id="results" hidden>
+      <h2 id="resultsTitle"></h2>
+      <ol id="ranking"></ol>
+      <div class="actions">
+        <button id="copyBtn" class="primary">Copy ranking</button>
+        <button id="undoLastBtn">Undo last pick</button>
+        <button id="restartBtn">Rank again</button>
+      </div>
+    </section>
+  </main>
+  <script src="states.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
