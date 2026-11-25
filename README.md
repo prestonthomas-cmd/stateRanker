@@ -2,9 +2,11 @@
 
 A small web app that ranks the 50 U.S. states by asking you to pick between two states, one matchup at a time.
 
+**Live app: https://prestonthomas-cmd.github.io/stateRanker/**
+
 ## Use it
 
-Open `index.html` in a browser. There's no build step and nothing to install.
+Use the live app above, or open `index.html` in a browser. There's no build step and nothing to install.
 
 1. Choose what you're ranking by (for example "Which state would you rather live in?"). You can also include Washington, D.C.
 2. Pick the winner of each matchup by clicking it, or with the ← / → keys.
